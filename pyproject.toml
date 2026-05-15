@@ -1,10 +1,10 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
 name = "caldera-mcp"
-version = "0.1.0"
+dynamic = ["version"]
 description = "MCP server for MITRE Caldera adversary emulation platform"
 readme = "README.md"
 license = { text = "Apache-2.0" }
@@ -30,3 +30,6 @@ caldera-mcp = "caldera_mcp.server:main"
 Homepage = "https://github.com/cowboy-samurai/caldera-mcp"
 Repository = "https://github.com/cowboy-samurai/caldera-mcp"
 Issues = "https://github.com/cowboy-samurai/caldera-mcp/issues"
+
+[tool.hatch.version]
+source = "vcs"
