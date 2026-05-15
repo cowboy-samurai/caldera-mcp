@@ -23,5 +23,7 @@ jobs:
 
       - name: Audit dependencies
         run: |
+          # Snapshot deps before pip-audit adds its own transitive packages
+          pip freeze --exclude-editable > /tmp/pkg-requirements.txt
           pip install pip-audit
-          pip-audit --project-path .
+          pip-audit -r /tmp/pkg-requirements.txt
