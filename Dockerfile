@@ -1,5 +1,8 @@
 FROM python:3.12-slim AS builder
 
+ARG VERSION=0.0.0.dev
+ENV SETUPTOOLS_SCM_PRETEND_VERSION=${VERSION}
+
 WORKDIR /build
 
 COPY pyproject.toml README.md ./
