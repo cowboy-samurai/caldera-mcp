@@ -24,4 +24,4 @@ jobs:
       - name: Audit dependencies
         run: |
           pip install pip-audit
-          pip-audit
+          pip-audit --project-path .
