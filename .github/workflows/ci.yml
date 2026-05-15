@@ -26,4 +26,6 @@ jobs:
           # Snapshot deps before pip-audit adds its own transitive packages
           pip freeze --exclude-editable > /tmp/pkg-requirements.txt
           pip install pip-audit
-          pip-audit -r /tmp/pkg-requirements.txt
+          # CVE-2025-69872: diskcache 5.6.3 is a transitive dep via fastmcp;
+          # 5.6.3 is the latest release — no upstream fix available yet.
+          pip-audit -r /tmp/pkg-requirements.txt --ignore-vuln CVE-2025-69872
