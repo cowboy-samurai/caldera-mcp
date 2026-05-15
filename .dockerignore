@@ -1,0 +1,13 @@
+.env
+.env.*
+*.key
+*.pem
+*.crt
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+dist/
+build/
+*.egg-info/
